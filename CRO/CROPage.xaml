@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CRO" x:Class="CRO.CROPage">
+<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="#eee"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+             <Style x:Key="Number" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+<StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+             <Label Text="Marvel Now: Amazin Spider man 01" HorizontalTextAlignment="Center"  Style="{StaticResource Title}"/>
+             <StackLayout Orientation="Horizontal">
+                
+            <Image Source="http://cbibli.esy.es/paniniImage/9782809449761.jpeg" WidthRequest="150" VerticalOptions="Start"></Image>
+            <ListView x:Name="EmployeeView" ItemTapped="OnItemTaped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DisplayName}"/>
+                                <Image Source="https://unsplash.it/40" />
+                            </StackLayout>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+             </StackLayout>
+            </StackLayout>
+             <StackLayout Orientation="Vertical">
+             <Label Text="Marvel Now: Amazin Spider man 02" HorizontalTextAlignment="Center"  Style="{StaticResource Title}"/>
+             <StackLayout Orientation="Horizontal">
+            <Image Source="http://cbibli.esy.es/paniniImage/9782809449763.jpeg" WidthRequest="150" VerticalOptions="Start"></Image>
+            <ListView x:Name="Employee2View" ItemTapped="OnItemTaped" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DisplayName}"/>
+                                <Image Source="https://unsplash.it/40" />
+                                        <ListView>
+                                        </ListView>
+                            </StackLayout>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+             </StackLayout>
+            </StackLayout>
+ </StackLayout>
+            
+    </ContentPage.Content>
+</ContentPage>

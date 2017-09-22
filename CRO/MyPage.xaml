@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CRO.MyPage">
+	<ContentPage.Content>
+        <ListView x:Name="CROView" ItemTapped="OnItemTaped" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+             <Label Text="{Binding LibraryTitle}" HorizontalTextAlignment="Start"/>
+             <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding imagepath}" WidthRequest="150" VerticalOptions="Start"></Image>
+         <!--   <ListView ItemTapped="OnItemTaped" ItemsSource="{Binding UsTitle}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding TitleName}"/>
+                                <Image Source="https://unsplash.it/40" />
+                            </StackLayout>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+             </StackLayout>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+	</ContentPage.Content>
+</ContentPage>
