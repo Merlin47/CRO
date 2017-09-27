@@ -28,7 +28,62 @@ namespace CRO
 
             }
             FrTitle[] mylist = FrTitle.FromJson(json);
-            CROView.ItemsSource = mylist;
+
+
+            StackLayout content = new StackLayout();
+            content.Orientation = StackOrientation.Vertical;
+
+            foreach (FrTitle item in mylist)
+            {
+				StackLayout numFR = new StackLayout()
+				{
+					Orientation = StackOrientation.Vertical
+				};
+
+				Label title = new Label()
+				{
+					Text = item.LibraryTitle,
+					HorizontalOptions = LayoutOptions.Center
+				};
+				numFR.Children.Add(title);
+
+				StackLayout details = new StackLayout()
+				{
+					Orientation = StackOrientation.Horizontal
+				};
+				Image img = new Image()
+				{
+                    Source = "http://cbibli.esy.es/paniniImage/" + item.Ean + ".jpeg",
+					WidthRequest = 150
+				};
+				details.Children.Add(img);
+
+				StackLayout details_muneros = new StackLayout()
+				{
+					Orientation = StackOrientation.Vertical
+				};
+                foreach (UsTitle ustitle in item.UsTitle)
+                {
+					Label lb = new Label()
+					{
+                        Text = ustitle.TitleName
+					};
+					details_muneros.Children.Add(lb);
+
+					
+                }
+                details.Children.Add(details_muneros);
+				numFR.Children.Add(details);
+				content.Children.Add(numFR);
+
+            }
+
+
+			//end for each numFR
+
+			var scrollView = new ScrollView { Content = content };
+
+            Content = scrollView ;
         }
 
 
